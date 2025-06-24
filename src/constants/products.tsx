@@ -223,6 +223,7 @@ export const products = [
   {
     href: "https://algochurn.com",
     title: "PayNest",
+    github: "",
     description:
       "I built an online payment app where you can send, receive, track, and manage money with ease.",
     thumbnail: HOME,
@@ -361,6 +362,7 @@ export const products = [
   },
   {
     href: "https://algochurn.com",
+    github: "",
     title: "Mini Projects",
     description:
       "Practical learning through mini builds.",
