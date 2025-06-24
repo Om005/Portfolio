@@ -271,7 +271,7 @@ export const products = [
           <div className="border-l-4 border-blue-500 pl-4">
             <h3 className="font-medium text-blue-600 mb-2">Contact Management</h3>
             <p className="text-gray-700 mb-2">
-              Developed an contact system that allows users to add any user to their contact list, with a special section highlighting contacts with whom they've transacted in the past 2 days.
+              Developed an contact system that allows users to add any user to their contact list, with a special section highlighting contacts with whom they&apos;ve transacted in the past 2 days.
             </p>
           </div>
 
@@ -285,7 +285,7 @@ export const products = [
           <div className="border-l-4 border-blue-500 pl-4">
             <h3 className="font-medium text-blue-600 mb-2">Transaction History</h3>
             <p className="text-gray-700 mb-2">
-              Built a history section that displays all transactions (successful and failed). Users can filter transactions by the other user's name, message, email, or view only sent or only received transactions.
+              Built a history section that displays all transactions (successful and failed). Users can filter transactions by the other user&apos;s name, message, email, or view only sent or only received transactions.
             </p>
           </div>
 

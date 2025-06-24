@@ -8,7 +8,6 @@ export const TechStack = () => {
     {
       title: "React",
       src: "/images/logos/React.png",
-
       className: "h-10 w-24",
     },
     {
@@ -26,6 +25,12 @@ export const TechStack = () => {
     {
       title: "MongoDB",
       src: "/images/logos/Mongodb.png",
+
+      className: "h-10 w-24",
+    },
+    {
+      title: "Next",
+      src: "/images/logos/Next.png",
 
       className: "h-10 w-24",
     },

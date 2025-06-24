@@ -118,7 +118,7 @@ export default function About() {
             transition={{ delay: 0.5 }}
           >
             <p className="text-gray-700 leading-relaxed">
-              I'm a passionate Full Stack Developer with expertise in modern web technologies. I love building scalable
+              I&apos;m a passionate Full Stack Developer with expertise in modern web technologies. I love building scalable
               applications and solving complex problems through clean, efficient code. Currently focused on creating
               innovative web solutions.
             </p>
