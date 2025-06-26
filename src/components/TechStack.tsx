@@ -30,7 +30,7 @@ export const TechStack = () => {
     },
     {
       title: "Next",
-      src: "/images/logos/Next.png",
+      src: "/images/logos/next.png",
 
       className: "h-10 w-24",
     },
