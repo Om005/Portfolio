@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { Heading } from "@/components/Heading"
 import { motion, AnimatePresence } from "framer-motion"
-import { Github, Linkedin, Mail, MapPin, Calendar, Code, Award, X, ExternalLink, Brain } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Calendar, Code, Award, X, ExternalLink, Brain, CodeIcon } from "lucide-react"
 import { twMerge } from "tailwind-merge"
 import { useState } from "react"
 export default function About() {
@@ -350,6 +350,56 @@ export default function About() {
       </AnimatePresence>
         
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg">
+            <Code className="w-5 h-5 text-white" />
+          </div>
+          <Heading className="font-black text-xl">Programming Languages</Heading>
+        </div>
+
+        <motion.div
+          className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 mb-8"
+          whileHover={{ y: -5 }}
+        >
+          <div>
+            <div>
+              <ul className="text-gray-700 flex gap-8 items-center">
+
+                {[
+                  "C++", "C", "Python", "Javascript"
+                ].map((skill, index) => (
+                  <motion.li
+                    key={skill}
+                    className="flex items-center gap-2 hover:text-green-600 transition-colors"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                    {skill}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            {/* <div>
+              <h4 className="font-semibold text-teal-600 text-lg mb-3">Programming Languages</h4>
+              <ul className="text-gray-700 space-y-2">
+                {["C++", "Java", "Python", "JavaScript", "SQL"].map((skill, index) => (
+                  <motion.li
+                    key={skill}
+                    className="flex items-center gap-2 hover:text-teal-600 transition-colors"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.7 + index * 0.1 }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-teal-400 rounded-full"></div>
+                    {skill}
+                  </motion.li>
+                ))}
+              </ul>
+            </div> */}
+          </div>
+        </motion.div>
         <div className="flex items-center gap-3 mb-6">
           <div className="p-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg">
             <Brain className="w-5 h-5 text-white" />
