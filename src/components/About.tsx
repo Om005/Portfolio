@@ -8,7 +8,6 @@ import { useState } from "react"
 export default function About() {
   const images = [
     "/images/me2.jpg",
-    // Add more images when available
   ]
 
   const containerVariants = {
@@ -63,24 +62,28 @@ export default function About() {
         {/* Profile Image */}
         <div className="md:col-span-1">
           {images.map((image, index) => (
-            <motion.div
-              key={image}
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-              <Image
-                src={image || "/placeholder.svg"}
-                width={300}
-                height={400}
-                alt="Profile"
-                className="relative rounded-lg object-cover shadow-2xl w-full h-60 md:h-80 border-2 border-white"
-              />
-            </motion.div>
-          ))}
+  <motion.div
+    key={image}
+    initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+    transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+    whileHover={{ scale: 1.05, rotate: 2 }}
+    className="relative group mx-auto max-w-[250px] sm:max-w-[300px] md:max-w-none"
+  >
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+    
+    <div className="relative w-full aspect-[3/4] md:h-80">
+      <Image
+        src={image}
+        fill
+        alt="Profile"
+        className="rounded-lg object-cover shadow-2xl border-2 border-white"
+      />
+    </div>
+  </motion.div>
+))}
+
+
         </div>
 
         {/* Introduction */}

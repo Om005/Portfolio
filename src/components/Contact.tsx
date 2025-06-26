@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios"
+import toast from "react-hot-toast";
 
 const defaultFormState = {
   name: {
@@ -33,6 +34,7 @@ export const Contact = () => {
       })
       if(response.data.success){
         setFormData(defaultFormState);
+        toast.success("Thank you, I'll get back to you as soon as possible.");
       }
     }
     catch(error){

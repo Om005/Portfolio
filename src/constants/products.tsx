@@ -70,7 +70,6 @@ const projects = [
 
 const techStack = [
   "HTML",
-  
   "CSS",
   "Javascript",
   "React",
@@ -189,6 +188,7 @@ export const products = [
               <li>React.js</li>
               <li>Monaco Editor for code editing</li>
               <li>Tailwind CSS for styling</li>
+              <li>Redux Toolkit for global state management</li>
               <li>Acernity UI</li>
               <li>Lucide React for icons</li>
               <li>Frame motion</li>
