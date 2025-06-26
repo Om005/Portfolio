@@ -517,7 +517,7 @@ export default function About() {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Current Rating</span>
-                <span className="font-semibold text-gray-800">1392</span>
+                <span className="font-semibold text-gray-800">1371</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Max Rating</span>
