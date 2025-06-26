@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Om Chavda - Developer",
+  title: "Om Chavda's Portfolio",
   description:
     "Om Chavda is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
   icons:{
