@@ -36,8 +36,12 @@ export const Contact = () => {
         setFormData(defaultFormState);
         toast.success("Thank you, I'll get back to you as soon as possible.");
       }
+      else{
+        toast.error("Something went wrong please try again later.");
+      }
     }
     catch(error){
+      toast.error("Something went wrong please try again later.");
       console.error("Error in mailing error:");
     }
     setdisable(false);
