@@ -31,6 +31,10 @@ export const Sidebar = () => {
               <SidebarHeader />
               <Navigation setOpen={setOpen} />
             </div>
+
+            {/* <div onClick={() => isMobile() && setOpen(false)}> */}
+              {/* <Badge text="Read Resume" /> */}
+            {/* </div> */}
             
           </motion.div>
         )}

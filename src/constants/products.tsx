@@ -180,7 +180,7 @@ export const products = [
 
        <div className="mb-8 pt-4">
 
-        <Heading className="font-black mb-2">Teck Stacks</Heading>
+        <Heading className="font-black mb-2">Tech Stacks</Heading>
         <div className="grid md:grid-cols-2 gap-6 -mt-10">
           <div>
             <h3 className="font-medium text-black mb-3">Frontend</h3>
@@ -295,7 +295,7 @@ export const products = [
 
        <div className="mb-8 pt-4">
 
-        <Heading className="font-black mb-2">Teck Stacks</Heading>
+        <Heading className="font-black mb-2">Tech Stacks</Heading>
         <div className="grid md:grid-cols-2 gap-6 -mt-10">
           <div>
             <h3 className="font-medium text-black mb-3">Frontend</h3>
