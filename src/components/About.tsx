@@ -235,6 +235,7 @@ export default function About() {
                 "React.js",
                 "Tailwind CSS",
                 "JavaScript",
+                "Socket.IO Client",
                 "Responsive Design",
                 "Next.js basics"
               ].map((skill, index) => (
@@ -265,6 +266,7 @@ export default function About() {
                 "MongoDB & PostgreSQL",
                 "Git & GitHub",
                 "RESTful APIs",
+                "Socket.IO",
                 "Next.js basics",
                 "Nextauth"
               ].map((skill, index) => (
@@ -417,7 +419,7 @@ export default function About() {
                 {[
                   "Proficient in Data Structures & Algorithms",
         "Strong reasoning and logical thinking skills",
-        "Backed by solving 1000+ problems on LeetCode and Codeforces",
+        "Backed by solving 1100+ problems on LeetCode and Codeforces",
                 ].map((skill, index) => (
                   <motion.li
                     key={skill}
@@ -477,15 +479,15 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span className="text-gray-600">Problems Solved</span>
-                <span className="font-bold text-orange-600">350+</span>
+                <span className="font-bold text-orange-600">450+</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Current Rating</span>
-                <span className="font-semibold text-gray-800">1901</span>
+                <span className="font-semibold text-gray-800">1910</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Max Rating</span>
-                <span className="font-semibold text-gray-800">1902</span>
+                <span className="font-semibold text-gray-800">1910</span>
               </div>
             </div>
           </motion.div>
@@ -517,7 +519,7 @@ export default function About() {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Current Rating</span>
-                <span className="font-semibold text-gray-800">1371</span>
+                <span className="font-semibold text-gray-800">1373</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Max Rating</span>

@@ -1,5 +1,6 @@
 import PIXELCODE from "public/images/pixelcode.png";
 import IDE from "public/images/ide.png";
+import ROOM from "public/images/Room.png"
 import ASSISTANT from "public/images/Assistant.png";
 import SHARE from "public/images/Share.png";
 import LINKS from "public/images/Links.png";
@@ -103,8 +104,8 @@ export const products = [
     description:
       "I build an online IDE where you can write, run, save, and share code with ease",
     thumbnail: PIXELCODE,
-    images: [PIXELCODE, IDE, ASSISTANT, SHARE, LINKS],
-    stack: ["React.js", "Tailwindcss", "Node.js", "MongoDB", "Express.js"],
+    images: [PIXELCODE, IDE, ASSISTANT, SHARE, LINKS, ROOM],
+    stack: ["React.js", "Tailwindcss", "Node.js", "MongoDB", "Express.js", "Socket.io"],
     slug: "Pixelcode",
     content: (
       // <div className="max-w-4xl mx-auto pb-8 bg-white">
@@ -112,10 +113,12 @@ export const products = [
         "text-sm lg:text-base font-normal text-secondar max-w-4xl mx-auto pb-8 bg-white",
       )}>
         <p>
-          PIXEL Code IDE is a browser-based coding platform I developed that lets users write, run, save, and share code with ease. It features Guest and Authenticated modes, supports 10+ languages, 15+ editor themes, and flexible input handling. Users can generate shareable links with titles and descriptions, and get help from Nebula, an AI assistant powered by Gemini 1.5 Flash.
-
-
+          PIXELCODE IDE is a browser-based collaborative coding platform that supports 10+ languages, 15+ themes, and flexible input handling. It offers project management with isolated file systems, allowing users to create, edit, and organize files and folders per project. <br />
+Users can generate sharable code links with custom titles and descriptions, and access Nebula, an AI assistant powered by Gemini 1.5 Flash, for debugging and code suggestions. Both Guest and Authenticated modes are supported, with real-time collaboration available via coding rooms.
         </p>
+
+
+
       {/* Operating Modes */}
       <div className="mb-8">
         <Heading className="font-black mb-2">Operating Modes </Heading>
@@ -136,7 +139,7 @@ export const products = [
       </div>
 
       {/* Key Features */}
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <Heading className="font-black mb-2">Key Features</Heading>
         <div className="space-y-4">
 
@@ -176,7 +179,63 @@ export const products = [
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <div className="mb-8">
+  <Heading className="font-black mb-2">Key Features</Heading>
+  <div className="space-y-4">
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">Project Management</h3>
+      <p className="text-gray-700 mb-2">
+        Built a project-based structure allowing authenticated users to manage multiple coding projects, each with its own isolated environment.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">File Management</h3>
+      <p className="text-gray-700 mb-2">
+        Built a complete file system from scratch for authenticated users, enabling them to create, update, delete, and rename files and folders.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">Real-Time Room Collaboration</h3>
+      <p className="text-gray-700 mb-2">
+        Developed a room-based live collaboration system where users can code together in real-time. Room creators can block participants to maintain control.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">Code Sharing</h3>
+      <p className="text-gray-700 mb-2">
+        Built a robust link sharing system that allows users to generate shareable links for code snippets, with update capabilities restricted to the admin.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-green-500 pl-4">
+      <h3 className="font-medium text-green-600 mb-2">AI Code Assistant - Nebula</h3>
+      <p className="text-gray-700 mb-2">
+        Integrated Google&apos;s Gemini 1.5 Flash API to power Nebula, an intelligent coding assistant that provides debugging assistance and code explanations.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">Multi-Language Code Execution</h3>
+      <p className="text-gray-700 mb-2">
+        Integrated the Monaco Editor with support for 10+ programming languages, syntax highlighting, and code execution using a one compiler API.
+      </p>
+    </div>
+
+    <div className="border-l-4 border-blue-500 pl-4">
+      <h3 className="font-medium text-blue-600 mb-2">Multiple Themes</h3>
+      <p className="text-gray-700 mb-2">
+        Integrated 15+ themes from a Monaco themes GitHub repo to enhance the coding experience, allowing users to personalize their environment and reduce eye strain.
+      </p>
+    </div>
+
+  </div>
+</div>
+
 
        <div className="mb-8 pt-4">
 
@@ -192,6 +251,7 @@ export const products = [
               <li>Acernity UI</li>
               <li>Lucide React for icons</li>
               <li>Frame motion</li>
+              <li>Socket.IO Client for real-time collaboration</li>
 
             </ul>
           </div>
@@ -203,6 +263,7 @@ export const products = [
               <li>JWT authentication system</li>
               <li>Google Gemini 1.5 Flash API</li>
               <li>Nodemailer for email verifaction and password reset</li>
+              <li>Socket.IO for real-time collaboration</li>
             </ul>
           </div>
         </div>

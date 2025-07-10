@@ -18,7 +18,7 @@ export default function Home() {
         {/* I&apos;m a senior software engineer with{" "}
         <Highlight>7 years of experience</Highlight> building scalable web apps
         that are performance optimized and good looking. */}
-        Turning ideas into performant web apps with <Highlight>1000+</Highlight> LeetCode & Codeforces challenges proving deep problem-solving expertise.
+        Turning ideas into performant web apps with <Highlight>1100+</Highlight> LeetCode & Codeforces challenges proving deep problem-solving expertise.
       </Paragraph>
       <Heading
         as="h2"
