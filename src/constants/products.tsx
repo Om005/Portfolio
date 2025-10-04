@@ -24,6 +24,7 @@ import { Heading } from "@/components/Heading";
 import { twMerge } from "tailwind-merge";
 import { Github, ExternalLink, Code, Target, Lightbulb, TrendingUp } from "lucide-react"
 
+
 const projects = [
   {
     title: "Placement Manager",
