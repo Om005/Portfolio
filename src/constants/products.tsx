@@ -26,6 +26,13 @@ import { Github, ExternalLink, Code, Target, Lightbulb, TrendingUp } from "lucid
 
 const projects = [
   {
+    title: "Placement Manager",
+    description:
+      "Developed a placement management system with efficient data structures, CSV preprocessing, analytics on placement trends, and search/query features for students and companies.",
+    githubUrl: "https://github.com/Om005/Capstone_project",
+    liveUrl: "#",
+  },
+  {
     title: "Password Manager",
     description:
       "Built a password manager with local MongoDB, account management, email verification, and full CRUD for site credentials.",
@@ -79,6 +86,8 @@ const techStack = [
   "Node.js",
   "Express.js",
   "Responsive Design",
+  "C++ (STL, OOP)",
+  "Python"
 ]
 
 

@@ -419,7 +419,7 @@ export default function About() {
                 {[
                   "Proficient in Data Structures & Algorithms",
         "Strong reasoning and logical thinking skills",
-        "Backed by solving 1100+ problems on LeetCode and Codeforces",
+        "Backed by solving 1400+ problems on LeetCode and Codeforces",
                 ].map((skill, index) => (
                   <motion.li
                     key={skill}
@@ -479,15 +479,15 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span className="text-gray-600">Problems Solved</span>
-                <span className="font-bold text-orange-600">450+</span>
+                <span className="font-bold text-orange-600">650+</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Current Rating</span>
-                <span className="font-semibold text-gray-800">1910</span>
+                <span className="font-semibold text-gray-800">1945</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Max Rating</span>
-                <span className="font-semibold text-gray-800">1910</span>
+                <span className="font-semibold text-gray-800">1945</span>
               </div>
             </div>
           </motion.div>
@@ -515,15 +515,15 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span className="text-gray-600">Problems Solved</span>
-                <span className="font-bold text-blue-600">670+</span>
+                <span className="font-bold text-blue-600">750+</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Current Rating</span>
-                <span className="font-semibold text-gray-800">1373</span>
+                <span className="font-semibold text-gray-800">1439</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Max Rating</span>
-                <span className="font-semibold text-gray-800">1439</span>
+                <span className="font-semibold text-gray-800">1447</span>
               </div>
             </div>
           </motion.div>
