@@ -1,13 +1,8 @@
 import { Container } from "@/components/Container";
-import { Heading } from "@/components/Heading";
-import { Highlight } from "@/components/Highlight";
-import { Paragraph } from "@/components/Paragraph";
-import { SingleProduct } from "@/components/Product";
-import { Products } from "@/components/Products";
+import { ProductDetailPage } from "@/components/ProductDetailPage";
 import { products } from "@/constants/products";
 import { Product } from "@/types/products";
 import { Metadata } from "next";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 
 type Props = {
@@ -19,14 +14,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = products.find((p) => p.slug === slug) as Product | undefined;
   if (product) {
     return {
-      title: product.title,
+      title: `${product.title} | Om Chavda`,
       description: product.description,
     };
   } else {
     return {
       title: "Projects | Om Chavda",
-      description:
-        "Om Chavda is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+      description: "Explore my portfolio of projects and work samples.",
     };
   }
 }
@@ -44,7 +38,7 @@ export default function SingleProjectPage({
   }
   return (
     <Container>
-      <SingleProduct product={product} />
+      <ProductDetailPage product={product} />
     </Container>
   );
 }
