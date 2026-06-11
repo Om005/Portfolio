@@ -7,57 +7,80 @@ import Link from "next/link";
 import Image from "next/image";
 import { Paragraph } from "./Paragraph";
 import { motion } from "framer-motion";
+import { IconArrowRight } from "@tabler/icons-react";
 
 export const Products = () => {
   return (
     <div>
-      <div className="grid grid-cols-1  gap-10">
+      <div className="grid grid-cols-1 gap-8">
         {products.map((product: Product, idx: number) => (
           <motion.div
             key={product.href}
             initial={{
               opacity: 0,
-              x: -50,
+              y: 30,
             }}
             animate={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
-            transition={{ duration: 0.2, delay: idx * 0.1 }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
           >
             <Link
               href={product.slug ? `/projects/${product.slug}` : product.href}
               key={product.href}
-              className="group flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:bg-gray-50 rounded-2xl transition duration-200 pt-4"
+              className="group card card-hover flex flex-col md:flex-row gap-6 md:gap-8 p-6 md:p-8"
             >
-              <Image
-                src={product.thumbnail}
-                alt="thumbnail"
-                height="200"
-                width="200"
-                className="rounded-md"
-              />
-              <div className="flex flex-col justify-between">
+              {/* Image Container */}
+              <div className="flex-shrink-0 relative overflow-hidden rounded-xl bg-gradient-to-br from-[var(--accent-light)] to-transparent h-48 md:h-56 w-full md:w-80 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src={product.thumbnail}
+                  alt={product.title}
+                  height="300"
+                  width="400"
+                  className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
+                />
+              </div>
+
+              {/* Content Container */}
+              <div className="flex flex-col justify-between flex-1 min-w-0">
                 <div>
-                  <Heading
-                    as="h4"
-                    className="font-black text-lg md:text-lg lg:text-lg "
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mb-4"
                   >
-                    {product.title}
-                  </Heading>
-                  <Paragraph className="text-sm md:text-sm lg:text-sm mt-2 max-w-xl">
+                    <Heading
+                      as="h4"
+                      className="font-black text-2xl md:text-2xl lg:text-3xl text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-200"
+                    >
+                      {product.title}
+                    </Heading>
+                  </motion.div>
+
+                  <Paragraph className="text-sm md:text-base lg:text-base mt-3 max-w-2xl text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors duration-200">
                     {product.description}
                   </Paragraph>
                 </div>
-                <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
+
+                {/* Stack Tags */}
+                <div className="flex flex-wrap gap-2 mt-6">
                   {product.stack?.map((stack: string) => (
-                    <span
+                    <motion.span
                       key={stack}
-                      className="text-xs  md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
+                      whileHover={{ scale: 1.05 }}
+                      className="text-xs md:text-sm bg-[var(--card-bg)] border border-[var(--card-border)] group-hover:border-[var(--accent)] text-[var(--text-secondary)] group-hover:text-[var(--accent)] px-3 py-1.5 rounded-full font-medium transition-all duration-200"
                     >
                       {stack}
-                    </span>
+                    </motion.span>
                   ))}
+                </div>
+
+                {/* Arrow Icon */}
+                <div className="mt-6 flex items-center gap-2 text-[var(--accent)] font-semibold group-hover:gap-3 transition-all duration-200">
+                  <span>View Project</span>
+                  <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </div>
               </div>
             </Link>

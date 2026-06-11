@@ -51,7 +51,7 @@ export default function About() {
   return (
     <motion.div
       className={twMerge(
-        "text-sm lg:text-base font-normal text-secondary max-w-4xl mx-auto pb-8 bg-gradient-to-br from-white to-gray-50",
+        "text-sm lg:text-base font-normal text-[var(--text-secondary)] max-w-4xl mx-auto pb-8 bg-[var(--background)]",
       )}
       variants={containerVariants}
       initial="hidden"
@@ -70,14 +70,14 @@ export default function About() {
     whileHover={{ scale: 1.05, rotate: 2 }}
     className="relative group mx-auto max-w-[250px] sm:max-w-[300px] md:max-w-none"
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+    <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-purple-600 rounded-lg blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
     
     <div className="relative w-full aspect-[3/4] md:h-80">
       <Image
         src={image}
         fill
         alt="Profile"
-        className="rounded-lg object-cover shadow-2xl border-2 border-white"
+        className="rounded-lg object-cover shadow-2xl border-2 border-[var(--card-border)]"
       />
     </div>
   </motion.div>
@@ -90,7 +90,7 @@ export default function About() {
         <motion.div className="md:col-span-2 flex flex-col justify-center space-y-6" variants={itemVariants}>
           <div className="space-y-2">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-              <Heading className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              <Heading className="text-4xl font-bold text-[var(--text-primary)]">
                 Om Chavda
               </Heading>
             </motion.div>
@@ -100,14 +100,14 @@ export default function About() {
               transition={{ delay: 0.3 }}
               className="flex items-center gap-2"
             >
-              <Code className="w-5 h-5 text-blue-600" />
-              <Heading className="text-xl text-blue-600 font-semibold">Full Stack Developer</Heading>
+              <Code className="w-5 h-5 text-[var(--accent)]" />
+              <Heading className="text-xl text-[var(--accent)] font-semibold">Full Stack Developer</Heading>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex items-center gap-2 text-gray-500"
+              className="flex items-center gap-2 text-[var(--text-secondary)]"
             >
               <MapPin className="w-4 h-4" />
               <span>Available for opportunities</span>
@@ -115,12 +115,12 @@ export default function About() {
           </div>
 
           <motion.div
-            className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100"
+            className="bg-[var(--card-bg)] p-6 rounded-xl border border-[var(--card-border)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-[var(--text-secondary)] leading-relaxed">
               I&apos;m a passionate Full Stack Developer with expertise in modern web technologies. I love building scalable
               applications and solving complex problems through clean, efficient code. Currently focused on creating
               innovative web solutions.
@@ -137,7 +137,7 @@ export default function About() {
             <motion.a
               href="https://github.com/Om005"
               target="_blank"
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-900 to-gray-700 text-white text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--text-primary)] text-[var(--background)] text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +149,7 @@ export default function About() {
             <motion.a
               href="https://www.linkedin.com/in/om-chavda-06a390302/"
               target="_blank"
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--accent)] text-white text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -158,7 +158,7 @@ export default function About() {
             </motion.a>
             <motion.a
               href="mailto:chavdaom84@gmail.com"
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-600 to-green-500 text-white text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--success)] text-white text-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -172,23 +172,23 @@ export default function About() {
       {/* Education */}
       <motion.div className="mb-12" variants={itemVariants}>
         <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+          <div className="p-2 bg-gradient-to-r from-[var(--accent)] to-purple-500 rounded-lg">
             <Calendar className="w-5 h-5 text-white" />
           </div>
-          <Heading className="font-black text-2xl">Education</Heading>
+          <Heading className="font-black text-2xl text-[var(--text-primary)]">Education</Heading>
         </div>
         <motion.div
-          className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          className="bg-[var(--card-bg)] rounded-xl p-6 shadow-lg border border-[var(--card-border)] hover:shadow-xl transition-shadow duration-300"
           whileHover={{ y: -5 }}
         >
-          <div className="border-l-4 border-blue-500 pl-6">
-            <h3 className="font-semibold text-blue-600 text-lg mb-2">Bachelor of Technology in Information and Communication Technology</h3>
-            <p className="text-gray-600 mb-3 flex items-center gap-2">
+          <div className="border-l-4 border-[var(--accent)] pl-6">
+            <h3 className="font-semibold text-[var(--accent)] text-lg mb-2">Bachelor of Technology in Information and Communication Technology</h3>
+            <p className="text-[var(--text-secondary)] mb-3 flex items-center gap-2">
               <span className="font-medium">Dhirubhai Ambani University</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-[var(--text-tertiary)]">•</span>
               <span>2023 - 2027</span>
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-[var(--text-secondary)] leading-relaxed">
               Focused on software engineering, data structures, algorithms, and web development, with a deep interest in AI/ML and data science. Maintained strong academic performance while working on various projects.
             </p>
           </div>
@@ -201,20 +201,20 @@ export default function About() {
           <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
             <Code className="w-5 h-5 text-white" />
           </div>
-          <Heading className="font-black text-2xl">Skills & Expertise</Heading>
+          <Heading className="font-black text-2xl text-[var(--text-primary)]">Skills & Expertise</Heading>
         </div>
           <div>
             <motion.div
-        className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-8 border border-blue-100"
+        className="bg-[var(--card-bg)] rounded-xl p-6 mb-8 border border-[var(--card-border)]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <h3 className="font-semibold text-blue-600 text-lg mb-3 flex items-center gap-2">
-          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+        <h3 className="font-semibold text-[var(--accent)] text-lg mb-3 flex items-center gap-2">
+          <div className="w-2 h-2 bg-[var(--accent)] rounded-full"></div>
           Full Stack Development
         </h3>
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-[var(--text-secondary)] leading-relaxed">
           Experienced in building end-to-end web applications with modern technologies. Proficient in both frontend and
           backend development, creating scalable and responsive applications with clean, maintainable code.
         </p>

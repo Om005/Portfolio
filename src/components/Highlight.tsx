@@ -10,9 +10,8 @@ export const Highlight = ({
   children: React.ReactNode;
 }) => {
   return (
-    <span className={twMerge("bg-blue-50 text-blue-800 font-medium rounded-sm px-1.5 py-0.5", className)}>
-  {children}
-</span>
-
+    <span className={twMerge("bg-[var(--accent-light)] text-[var(--accent)] font-medium rounded-sm px-1.5 py-0.5", className)}>
+      {children}
+    </span>
   );
 };

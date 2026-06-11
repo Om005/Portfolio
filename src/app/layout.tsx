@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { Footer } from "@/components/Footer";
 import { Toaster } from 'react-hot-toast';
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,21 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={twMerge(
           inter.className,
-          "flex antialiased h-screen overflow-hidden bg-gray-100"
+          "flex antialiased h-screen overflow-hidden bg-[var(--background)] dark:bg-[var(--background)]"
         )}
       >
-        <Sidebar />
-        <div className="lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto">
-          <div className="flex-1 bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto">
-            {children}
-            <Footer />
-            <Toaster position="top-center" />
+        <ThemeProvider>
+          <Sidebar />
+          <div className="lg:pl-2 lg:pt-2 bg-[var(--background)] flex-1 overflow-y-auto transition-colors duration-300">
+            <div className="flex-1 bg-[var(--background)] min-h-screen lg:rounded-tl-xl border border-transparent lg:border-[var(--card-border)] overflow-y-auto">
+              {children}
+              <Footer />
+              <Toaster position="top-center" />
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

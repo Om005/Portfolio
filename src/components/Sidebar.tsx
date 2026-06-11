@@ -4,17 +4,34 @@ import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
-import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
+import { IconLayoutSidebarRightCollapse, IconMoon, IconSun } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
+import { useTheme } from "@/context/ThemeContext";
+import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
   const [open, setOpen] = useState(isMobile() ? false : true);
+  const [mounted, setMounted] = useState(false);
+  let theme = "light";
+  let toggleTheme = () => {};
+
+  try {
+    const themeContext = useTheme();
+    theme = themeContext.theme;
+    toggleTheme = themeContext.toggleTheme;
+  } catch (e) {
+    // Theme context not available yet
+  }
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -25,16 +42,30 @@ export const Sidebar = () => {
             animate={{ x: 0 }}
             transition={{ duration: 0.2, ease: "linear" }}
             exit={{ x: -200 }}
-            className="px-6  z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"
+            className="px-6  z-[100] py-10 bg-[var(--background)] max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between border-r border-[var(--card-border)]"
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
               <Navigation setOpen={setOpen} />
             </div>
 
-            {/* <div onClick={() => isMobile() && setOpen(false)}> */}
-              {/* <Badge text="Read Resume" /> */}
-            {/* </div> */}
+            {mounted && (
+              <div className="flex items-center gap-2">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={toggleTheme}
+                  className="p-2 rounded-lg bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--accent)] transition-all duration-200"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "light" ? (
+                    <IconMoon className="h-5 w-5 text-[var(--accent)]" />
+                  ) : (
+                    <IconSun className="h-5 w-5 text-[var(--accent)]" />
+                  )}
+                </motion.button>
+              </div>
+            )}
             
           </motion.div>
         )}
@@ -66,14 +97,14 @@ export const Navigation = ({
           href={link.href}
           onClick={() => isMobile() && setOpen(false)}
           className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
-            isActive(link.href) && "bg-white shadow-lg text-primary"
+            "text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
+            isActive(link.href) && "bg-[var(--card-bg)] shadow-lg text-[var(--accent)]"
           )}
         >
           <link.icon
             className={twMerge(
               "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
+              isActive(link.href) && "text-[var(--accent)]"
             )}
           />
           <span>{link.label}</span>
@@ -89,13 +120,13 @@ export const Navigation = ({
           target="_blank"
           href={link.href}
           className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
+            "text-[var(--text-secondary)] hover:text-[var(--accent)] transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
           )}
         >
           <link.icon
             className={twMerge(
               "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
+              isActive(link.href) && "text-[var(--accent)]"
             )}
           />
           <span>{link.label}</span>
